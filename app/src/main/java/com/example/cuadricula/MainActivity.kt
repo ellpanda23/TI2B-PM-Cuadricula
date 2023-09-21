@@ -122,8 +122,15 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
 
 @Preview(showBackground = true)
 @Composable
-fun GreetingPreview() {
+fun TopicPreview() {
     CuadriculaTheme {
-        Greeting("Android")
+        val topic = Topic(R.string.photography, 321, R.drawable.photography)
+        Column(
+            modifier = Modifier.fillMaxSize(),
+            verticalArrangement = Arrangement.Center,
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
+            TopicCard(topic = topic)
+        }
     }
 }
